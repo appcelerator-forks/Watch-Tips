@@ -1,0 +1,88 @@
+".container":{
+	backgroundColor: "#0000",
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	layout: 'vertical'
+}
+
+".header":{
+	top:30,
+	left:10,
+	right:10,
+	height: Ti.UI.SIZE
+}
+
+".spacer":{
+	width: Ti.UI.FILL,
+	height: 10
+}
+
+".calculator":{
+	left:10,
+	right:10,
+	top:20,
+	height: Ti.UI.SIZE,
+	backgroundColor: "#4C4C4C",
+	borderRadius: 5,
+	layout: 'vertical'
+}
+
+".formTitle":{
+	width: Ti.UI.FILL, 
+	textAlign: "center", 
+	color: "#00FF00",
+	font:{
+		fontSize: 25,
+		fontWeight: "bold"		
+	}
+}
+
+".formLabel":{
+	color:" #fff",
+	textAlign: "left",
+	left: 22,
+	right: 22,
+	top: 5
+}
+
+".formField":{
+	top:5,
+	left:20,
+	right:20,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	height: 35
+}
+
+".resultLabel":{
+	width: '50%',
+	left: 5,
+	font:{
+		fontSize:22,
+		fontWeight: "bold"
+	},
+	textAlign: "right",
+	top: 10,
+	color: "#FFF"
+}
+".resultValue":{
+	width: Ti.UI.SIZE,
+	right: 30,
+	font:{
+		fontSize:22,
+		fontWeight: "bold"
+	},
+	textAlign: "right",
+	top: 10,
+	color: "#FFFF00"
+}
+
+".billLabel":{
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+}
+
+".icon":{
+	image: "/images/foodicon.png",
+	height: 70,
+	width: 70
+}

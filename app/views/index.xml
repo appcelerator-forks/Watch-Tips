@@ -1,0 +1,66 @@
+<Alloy>
+	<Window class="container">
+
+		<View class="header">
+			<Label class="formTitle">Tip Calculator</Label>
+		</View>
+
+        <View class="calculator">
+
+    		<Label class="formLabel" color="#00FF00" top="10">Tip %</Label>
+    		<TextField id="tip" hintText="10" class="formField" keyboardType="Ti.UI.KEYBOARD_TYPE_NUMBER_PAD" onChange="calculate">
+               <KeyboardToolbar>
+                    <Toolbar>
+                        <Items>
+                            <Button style="DONE" onClick="defocusTip">Close</Button>
+                            <FlexSpace/>
+                            <Button style="DONE" onClick="tip10">10%</Button>
+                            <FlexSpace/>
+                            <Button style="DONE" onClick="tip12">12%</Button>
+                            <FlexSpace/>
+                            <Button style="DONE" onClick="tip15">15%</Button>
+                        </Items>
+                    </Toolbar>
+                </KeyboardToolbar>						
+    		</TextField>
+
+    		<Label class="formLabel" color="#00FF00" >Split between</Label>
+    		<TextField id="split" hintText="1" class="formField" keyboardType="Ti.UI.KEYBOARD_TYPE_NUMBER_PAD" onChange="calculate">
+               <KeyboardToolbar>
+                    <Toolbar>
+                        <Items>
+                            <Button style="DONE" onClick="defocusSplit">Close</Button>
+                        </Items>
+                    </Toolbar>
+                </KeyboardToolbar>						
+    		</TextField>
+
+            <Label class="formLabel">Bill</Label>
+            <TextField id="bill" hintText="0.00" class="formField" keyboardType="Ti.UI.KEYBOARD_TYPE_DECIMAL_PAD" onChange="calculate">
+                <KeyboardToolbar>
+                    <Toolbar>
+                        <Items>
+                            <Button style="DONE" onClick="defocusBill">Close</Button>
+                        </Items>
+                    </Toolbar>
+                </KeyboardToolbar>          
+            </TextField>
+
+            <View class="billLabel">
+                <Label class="resultLabel">With tip</Label>
+                <Label id="totalbill" class="resultValue">0.00</Label>   
+            </View>
+
+            <View class="billLabel">
+                <Label class="resultLabel">Cost each</Label>
+                <Label id="costeach" class="resultValue">0.00</Label>
+            </View>
+  
+            <View class="spacer" />
+
+        </View>
+
+        <ImageView top="50" class="icon" />
+
+	</Window>
+</Alloy>

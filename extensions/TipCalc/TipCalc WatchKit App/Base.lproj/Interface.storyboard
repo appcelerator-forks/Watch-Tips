@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5pp-i6-0tF">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="848"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="TipCalc_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="848"/>
+        </scene>
+        <!--< calculator-->
+        <scene sceneID="niR-Zv-Jxe">
+            <objects>
+                <controller identifier="TipController" title="&lt; calculator" id="vOz-fE-dLe" customClass="TipController" customModule="TipCalc_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="PtB-Az-1Xg">
+                            <items>
+                                <button width="1" alignment="left" title="+" id="qLC-lg-BMW">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="increaseTip" destination="vOz-fE-dLe" id="pS7-ez-y4T"/>
+                                    </connections>
+                                </button>
+                                <label width="1" alignment="left" text="10%" textAlignment="center" id="EAF-X9-bNh">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="44"/>
+                                </label>
+                                <button width="1" alignment="left" title="-" id="Rq2-9s-Cuv">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="decreaseTip" destination="vOz-fE-dLe" id="7oZ-k9-JuS"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="tipPercent" destination="EAF-X9-bNh" id="skP-nZ-QNg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="562" y="-158"/>
+        </scene>
+        <!--< calculator-->
+        <scene sceneID="aVi-Y1-aXU">
+            <objects>
+                <controller identifier="SplitController" title="&lt; calculator" id="wUC-EE-GnZ" customClass="SplitController" customModule="TipCalc_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="zwB-eY-VDi">
+                            <items>
+                                <button width="1" alignment="left" title="+" id="21H-nA-8yu">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="increaseSplit" destination="wUC-EE-GnZ" id="QTS-bL-Dc5"/>
+                                    </connections>
+                                </button>
+                                <label width="1" alignment="left" text="1" textAlignment="center" id="Kzu-0r-bEe">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="44"/>
+                                </label>
+                                <button width="1" alignment="left" title="-" id="cXt-t9-BUx">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="decreaseSplit" destination="wUC-EE-GnZ" id="77s-Tc-SeQ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="splitBetween" destination="Kzu-0r-bEe" id="wpb-yv-ffx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="562" y="128"/>
+        </scene>
+        <!--< calculator-->
+        <scene sceneID="1pI-Sl-ZgQ">
+            <objects>
+                <controller identifier="BillController" title="&lt; calculator" id="8e1-9H-DfU" customClass="BillController" customModule="TipCalc_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="9xE-t5-zjc">
+                            <items>
+                                <label width="1" alignment="left" text="0.00" textAlignment="right" id="qGo-vD-M8J">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="40" alignment="left" id="hm1-Ob-o36">
+                            <items>
+                                <button width="0.25" alignment="left" title="8" id="HDZ-Fw-SOd">
+                                    <connections>
+                                        <action selector="eightBtn" destination="8e1-9H-DfU" id="JmD-HC-gCN"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="9" id="lzs-CK-IJC">
+                                    <connections>
+                                        <action selector="nineBtn" destination="8e1-9H-DfU" id="YgB-t7-CJM"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="." id="oD3-nl-NFT">
+                                    <connections>
+                                        <action selector="decimalBtn" destination="8e1-9H-DfU" id="h7N-c3-KaD"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="C" id="V4I-jO-EXR">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="clearBtn" destination="8e1-9H-DfU" id="Udw-9J-i6x"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="40" alignment="left" id="Koi-De-1Nb">
+                            <items>
+                                <button width="0.25" alignment="left" title="4" id="GCX-IA-kzD">
+                                    <connections>
+                                        <action selector="fourBtn" destination="8e1-9H-DfU" id="c5L-bV-H5g"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="5" id="3uQ-Vp-fby">
+                                    <connections>
+                                        <action selector="fiveBtn" destination="8e1-9H-DfU" id="wwd-ZJ-35G"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="6" id="RX5-wo-n4y">
+                                    <connections>
+                                        <action selector="sixBtn" destination="8e1-9H-DfU" id="GlJ-rI-7a7"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="7" id="JCB-Lu-iFV">
+                                    <connections>
+                                        <action selector="sevenBtn" destination="8e1-9H-DfU" id="akB-GY-bEx"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="40" alignment="left" id="pbd-ap-1sP">
+                            <items>
+                                <button width="0.25" alignment="left" title="0" id="F6l-ey-6Q5">
+                                    <connections>
+                                        <action selector="zeroBtn" destination="8e1-9H-DfU" id="xzd-1Z-3wp"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="1" id="8sz-x2-NEr">
+                                    <connections>
+                                        <action selector="oneBtn" destination="8e1-9H-DfU" id="TTs-15-yPg"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="2" id="V4S-qf-Mp8">
+                                    <connections>
+                                        <action selector="twoBtn" destination="8e1-9H-DfU" id="Twf-s2-NtI"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" title="3" id="4pC-NA-a2T">
+                                    <connections>
+                                        <action selector="threeBtn" destination="8e1-9H-DfU" id="1G7-Ke-Ttp"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="totalAmount" destination="qGo-vD-M8J" id="XR9-Qp-8p0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="562" y="431"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="TYV-3D-gdM">
+            <objects>
+                <controller id="5pp-i6-0tF" customClass="InterfaceController" customModule="TipCalc_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Tip Calculator" textAlignment="center" id="aA7-kf-DCQ">
+                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <group width="1" alignment="left" layout="vertical" id="EGQ-Ee-eAj">
+                            <items>
+                                <group width="1" alignment="left" id="gie-mY-65Q">
+                                    <items>
+                                        <button width="0.5" alignment="left" title="10%" id="zev-R0-vG2">
+                                            <connections>
+                                                <action selector="showTipController" destination="5pp-i6-0tF" id="J8x-Fo-SxL"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" alignment="left" title="1" id="6w7-Kn-5jw">
+                                            <connections>
+                                                <action selector="showSplitController" destination="5pp-i6-0tF" id="8CY-io-q4L"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="RPj-kz-qRt">
+                                    <items>
+                                        <label width="0.5" alignment="left" text="Tip" textAlignment="center" id="pop-P2-J03">
+                                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <label width="0.5" alignment="left" text="Split" textAlignment="center" id="Ilx-2z-elE">
+                                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="d6N-9y-cMy">
+                                    <items>
+                                        <button width="0.59999999999999998" alignment="left" title="Bill" id="XO7-Lr-mWE">
+                                            <connections>
+                                                <action selector="showBillController" destination="5pp-i6-0tF" id="cAo-Ns-shd"/>
+                                            </connections>
+                                        </button>
+                                        <label width="0.40000000000000002" alignment="left" verticalAlignment="center" text="0.00" textAlignment="right" id="svz-vp-blb">
+                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="xqB-0F-sRn">
+                            <items>
+                                <label width="0.59999999999999998" alignment="left" text="With Tip" textAlignment="right" id="wGN-Xe-ttf"/>
+                                <label width="0.40000000000000002" alignment="left" text="0.00" textAlignment="right" id="93y-Oo-qsz">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="csJ-H9-3xG">
+                            <items>
+                                <label width="0.59999999999999998" alignment="left" text="Cost each" textAlignment="right" id="JqB-LP-gti"/>
+                                <label width="0.40000000000000002" alignment="left" text="0.00" textAlignment="right" id="QzU-RA-3Ge">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="costEach" destination="QzU-RA-3Ge" id="i2Q-hA-Cot"/>
+                        <outlet property="currentSplit" destination="6w7-Kn-5jw" id="FrD-ft-bI3"/>
+                        <outlet property="currentTip" destination="zev-R0-vG2" id="ZF5-3u-KEa"/>
+                        <outlet property="currentTotal" destination="svz-vp-blb" id="0SS-zq-b6b"/>
+                        <outlet property="withTip" destination="93y-Oo-qsz" id="Q6M-yQ-X1k"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="242" y="129"/>
+        </scene>
+    </scenes>
+</document>
