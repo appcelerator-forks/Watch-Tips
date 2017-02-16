@@ -3,7 +3,6 @@
 //  TipCalc
 //
 //  Created by Stephen Rogers on 13/02/2017.
-//  Copyright © 2017 Appcelerator, Inc. All rights reserved.
 //
 
 import WatchKit

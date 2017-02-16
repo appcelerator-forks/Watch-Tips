@@ -1,18 +1,46 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Tip Calculator
+==============
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+This project is a working example of creating a Titanium iOS app and an associated Watch App (in Swift). The app is also available on the app store here: {https://itunes.apple.com/us/app/watch-tips/id1205407902?ls=1&mt=8}.
+
+The app was built using the Ti SDK and CLI only using Sublime Text as the IDE (I have a custom built  SublimeText Ti plugin I created).
+
+Introduction
+++++++++++++
+
+I attempted to do a similar project over a year ago with Titanium and got all the way to submitting the app to the App Store, but even after successful validation and upload I always got an email back from Apple with a rejection notice (see JIRA here: https://jira.appcelerator.org/browse/TIMOB-23313)
+
+This various issue seemed to finally get resolved in TI SDK 6.0.1.GA  so I decided to create another, simple app to see what happened,  the result is this simple project.
+
+
+Running the app
++++++++++++++++
+
+As I have mentioned I used the CLI for all parts of this project and the command used to run the phone and watch app in the simulators is:
+
+ti build -p ios --device-id --log-level info  --launch-watch-app
+
+This allows you to select the phone model (and iOS version if you have more than 1 installed)
+
+
+Notes
++++++
+
+My first submission was rejected due to HIG issues, specifically
+
+1. The Watch Icon I used had a black background so the icon did not look as though it was round on the black aground of the watch.
+2. I used custom titles of the dialog views to change the Bill, Tip and Split values of '< calculator'. This is a big no-no as it specifically states that the correct way to close a modal is with the Close button that can be re-named but MUST not include a <.
+
+Note to self - read this first: https://developer.apple.com/watchos/human-interface-guidelines/overview/
 
 
 
-----------------------------------
-Stuff our legal folk make us say:
+Disclaimer
+++++++++++
 
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
+Neither the Titanium project (and especially the Swift code) is supposed to be best practice, it was written to see if the past issue was resolved. But please feel free to take a look and use any of the code.
 
-Titanium is Copyright (c) 2008-2016 by Appcelerator, Inc. All Rights Reserved.
 
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
+
+
 

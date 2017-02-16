@@ -2,8 +2,7 @@
 //  InterfaceController.swift
 //  tips WatchKit Extension
 //
-//  Created by not specified on 2/11/2017.
-//  not specified. All rights reserved.
+//  Created by Stephen Rogers on 13/02/2017
 //
 
 import WatchKit
@@ -70,7 +69,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         presentController(withName: "BillController", context: self)
     }
     
-    /**
+    /** testing various message sending processes
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         if let status = applicationContext["status"] as? String {
             currentTip.setTitle(status)

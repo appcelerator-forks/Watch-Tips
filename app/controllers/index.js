@@ -26,8 +26,6 @@
 		   	calculate();
 		   }
 		});
-
-
 	}
 
 })(); 
@@ -56,7 +54,6 @@ function calculate(){
 		$.costeach.setText(String.format("%.2f", costeach));
 		
 	}
-
 
 }
 

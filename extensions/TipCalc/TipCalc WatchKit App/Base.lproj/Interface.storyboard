@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="505" y="848"/>
         </scene>
-        <!--< calculator-->
+        <!--Close-->
         <scene sceneID="niR-Zv-Jxe">
             <objects>
-                <controller identifier="TipController" title="&lt; calculator" id="vOz-fE-dLe" customClass="TipController" customModule="TipCalc_WatchKit_Extension">
+                <controller identifier="TipController" title="Close" id="vOz-fE-dLe" customClass="TipController" customModule="TipCalc_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="PtB-Az-1Xg">
                             <items>
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="562" y="-158"/>
         </scene>
-        <!--< calculator-->
+        <!--Close-->
         <scene sceneID="aVi-Y1-aXU">
             <objects>
-                <controller identifier="SplitController" title="&lt; calculator" id="wUC-EE-GnZ" customClass="SplitController" customModule="TipCalc_WatchKit_Extension">
+                <controller identifier="SplitController" title="Close" id="wUC-EE-GnZ" customClass="SplitController" customModule="TipCalc_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="zwB-eY-VDi">
                             <items>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="562" y="128"/>
         </scene>
-        <!--< calculator-->
+        <!--Close-->
         <scene sceneID="1pI-Sl-ZgQ">
             <objects>
-                <controller identifier="BillController" title="&lt; calculator" id="8e1-9H-DfU" customClass="BillController" customModule="TipCalc_WatchKit_Extension">
+                <controller identifier="BillController" title="Close" id="8e1-9H-DfU" customClass="BillController" customModule="TipCalc_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="9xE-t5-zjc">
                             <items>

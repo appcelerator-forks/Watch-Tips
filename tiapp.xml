@@ -2,10 +2,10 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
 	<id>uk.spiralarm.tipcalculator</id>
 	<name>Watch Tips</name>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<publisher>SpiralArm Consulting Ltd</publisher>
 	<url>http://www.spiralarm.uk</url>
-	<description/>
+	<description>A tip and split calculator for restaurant and bars bills.</description>
 	<copyright>SpiralArm Consulting Ltd</copyright>
 	<icon>appicon.png</icon>
 	<fullscreen>false</fullscreen>
@@ -15,7 +15,7 @@
 	<property name="ti.ui.defaultunit" type="string">dp</property>
 	<property name="run-on-main-thread" type="bool">false</property>
 	<ios>
-		<team-id>QJ23459J94</team-id>
+		<team-id>{TEAM ID HERE}</team-id>
    		<default-background-color>#000</default-background-color>
 		<enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
 		<use-app-thinning>false</use-app-thinning>
