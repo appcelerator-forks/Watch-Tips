@@ -37,7 +37,7 @@ Note to self - read this first: https://developer.apple.com/watchos/human-interf
 
 ## Updates
 
-version 1.0.2 of the Watch App is coded to use the Digital Crown to change the values of the Tip percentage and the Split value rather than pop up a seperate screen 
+version 1.0.2 of the Watch App is coded to use the Digital Crown to change the values of the Tip percentage and the Split value rather than pop up a seperate screen. It has also been updated to use Ti SDK 6.0.2.GA
 
 
 ### Disclaimer
