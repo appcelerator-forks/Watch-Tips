@@ -6,7 +6,7 @@ This project is a working example of creating a Titanium iOS app and an associat
 
 https://itunes.apple.com/us/app/watch-tips/id1205407902?ls=1&mt=8. 
 
-The app was built using the Ti SDK and CLI only using Sublime Text as the IDE witha custom plugin for Titanium dev.
+The app was built using the Ti SDK and CLI only using Sublime Text as the IDE with a custom plugin for Titanium dev.
 
 ## Introduction
 
@@ -37,7 +37,7 @@ Note to self - read this first: https://developer.apple.com/watchos/human-interf
 
 ## Updates
 
-version 1.0.2 of the Watch App is coded to use the Digital Crown to change the values of the Tip percentage and the Split vlaue rather than pop up a seperate screen 
+version 1.0.2 of the Watch App is coded to use the Digital Crown to change the values of the Tip percentage and the Split value rather than pop up a seperate screen 
 
 
 ### Disclaimer
