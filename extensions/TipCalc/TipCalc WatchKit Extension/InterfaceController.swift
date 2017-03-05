@@ -9,12 +9,16 @@ import WatchKit
 import WatchConnectivity
 import Foundation
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+
+class InterfaceController: WKInterfaceController, WCSessionDelegate, WKCrownDelegate {
 
     
     var tipAmount: Int = 10
     var splitBetween: Int = 1
     var billTotal = Double(0)
+    var focusButton: Int = 0
+    var accumulatedCrownDelta = 0.0
+
 
     
     @IBOutlet var currentTip: WKInterfaceButton!
@@ -22,7 +26,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var currentSplit: WKInterfaceButton!
     @IBOutlet var costEach: WKInterfaceLabel!
     @IBOutlet var withTip: WKInterfaceLabel!
-    
+    @IBOutlet var billButton: WKInterfaceButton!
     
     override init() {
         super.init()
@@ -30,6 +34,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        if #available(watchOS 3.0, *) {
+            crownSequencer.delegate = self
+        }
         updateCalc()
     }
 
@@ -39,6 +46,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let session = WCSession.default()
             session.delegate = self
             session.activate()
+        }
+        if #available(watchOS 3.0, *) {
+            crownSequencer.focus()
         }
         updateCalc()
     }
@@ -53,19 +63,96 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     
+    
+    @available(watchOSApplicationExtension 3.0, *)
+    func crownDidBecomeIdle(_ crownSequencer: WKCrownSequencer?) {
+        accumulatedCrownDelta = 0.0
+    }
+    
+    @available(watchOSApplicationExtension 3.0, *)
+    func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
+
+        accumulatedCrownDelta += rotationalDelta
+        
+        let threshold = 0.05
+    
+        // do nothing if delta is less that threshold
+        guard abs(accumulatedCrownDelta) > threshold else {
+            return
+        }
+        
+        if focusButton == 1 {
+            if accumulatedCrownDelta > 0 {
+                splitBetween += 1
+            } else {
+                splitBetween -= 1
+            }
+            if splitBetween < 1 {
+                splitBetween = 1
+            }
+            if splitBetween > 50 {
+                splitBetween = 50
+            }
+        }
+            
+        if focusButton == 2 {
+            if accumulatedCrownDelta > 0 {
+                tipAmount += 1
+            } else {
+                tipAmount -= 1
+            }
+            if tipAmount < 0 {
+                tipAmount = 0
+            }
+            if tipAmount > 100 {
+                tipAmount = 100
+            }
+        }
+
+        accumulatedCrownDelta = 0
+        updateCalc()
+
+        
+    }
+    
     // show the Split Controller
     @IBAction func showSplitController() {
-        presentController(withName: "SplitController", context: self)
+        if #available(watchOS 3.0, *) {
+            resetButtonFocus()
+            currentSplit?.setBackgroundColor(UIColor(red: 0/255, green: 128/255, blue: 255/255, alpha: 1.0))
+            focusButton = 1
+            
+        } else {
+            presentController(withName: "SplitController", context: self)
+        }
+
     }
     
     
     // show the Tip controller
     @IBAction func showTipController() {
-        presentController(withName: "TipController", context: self)
+        if #available(watchOS 3.0, *) {
+            resetButtonFocus()
+            currentTip?.setBackgroundColor(UIColor(red: 0/255, green: 128/255, blue: 255/255, alpha: 1.0))
+            focusButton = 2
+        } else {
+            presentController(withName: "TipController", context: self)
+        }
     }
+    
+    
+    // reset the focus to the currently selected button
+    func resetButtonFocus(){
+        focusButton = 0
+        currentSplit?.setBackgroundColor(UIColor.darkGray)
+        currentTip?.setBackgroundColor(UIColor.darkGray)
+        billButton?.setBackgroundColor(UIColor.darkGray)
+    }
+    
     
     // Show the Bill Controller
     @IBAction func showBillController() {
+        resetButtonFocus()
         presentController(withName: "BillController", context: self)
     }
     

@@ -209,11 +209,13 @@
                                 <group width="1" alignment="left" id="gie-mY-65Q">
                                     <items>
                                         <button width="0.5" alignment="left" title="10%" id="zev-R0-vG2">
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="showTipController" destination="5pp-i6-0tF" id="J8x-Fo-SxL"/>
                                             </connections>
                                         </button>
                                         <button width="0.5" alignment="left" title="1" id="6w7-Kn-5jw">
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="showSplitController" destination="5pp-i6-0tF" id="8CY-io-q4L"/>
                                             </connections>
@@ -235,6 +237,7 @@
                                 <group width="1" alignment="left" id="d6N-9y-cMy">
                                     <items>
                                         <button width="0.59999999999999998" alignment="left" title="Bill" id="XO7-Lr-mWE">
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="showBillController" destination="5pp-i6-0tF" id="cAo-Ns-shd"/>
                                             </connections>
@@ -264,6 +267,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="billButton" destination="XO7-Lr-mWE" id="5WW-Kn-HPY"/>
                         <outlet property="costEach" destination="QzU-RA-3Ge" id="i2Q-hA-Cot"/>
                         <outlet property="currentSplit" destination="6w7-Kn-5jw" id="FrD-ft-bI3"/>
                         <outlet property="currentTip" destination="zev-R0-vG2" id="ZF5-3u-KEa"/>
